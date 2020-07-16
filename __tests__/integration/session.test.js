@@ -13,7 +13,7 @@ describe('Authentication', () => {
     const user = await User.create({
       name: 'Luan Souza',
       email: 'luantest@gmail.com',
-      password: '0192837465'
+      password: 'abcde12345'
     })
 
     const response = await request(app)
