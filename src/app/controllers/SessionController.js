@@ -15,7 +15,7 @@ class SessionController {
       return res.status(401).json({ msg: 'Incorret Password' })
     }
 
-    return res.status(200).json({ user })
+    return res.status(200).json({ user, token: user.generateToken() })
   }
 }
 
