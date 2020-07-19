@@ -48,4 +48,29 @@ describe('Authentication', () => {
 
     expect(response.body).toHaveProperty('token')
   })
+
+  it('should have access to private routes when authenticated', async () => {
+    const user = await createUser()
+
+    const response = await request(app)
+      .get('/search')
+      .set('Authorization', `Bearer ${user.generateToken()}`)
+
+    expect(response.status).toBe(200)
+  })
+
+  it('should not have access to private routes without jwt', async () => {
+    const response = await request(app)
+      .get('/search')
+
+    expect(response.status).toBe(401)
+  })
+
+  it('should not have access to private routes with invalid jwt', async () => {
+    const response = await request(app)
+      .get('/search')
+      .set('Authorization', `Bearer 123456`)
+
+    expect(response.status).toBe(401)
+  })
 })

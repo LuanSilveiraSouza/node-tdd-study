@@ -1,8 +1,11 @@
 const routes = require('express').Router()
 
-const { User } = require('./app/models/index')
 const SessionController = require('./app/controllers/SessionController')
+const authMiddleware = require('./app/middlewares/auth')
 
 routes.post('/sessions', SessionController.store)
+routes.get('/search', authMiddleware, (req, res) => {
+  return res.status(200).send()
+})
 
 module.exports = routes

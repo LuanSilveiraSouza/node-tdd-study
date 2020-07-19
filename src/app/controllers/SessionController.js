@@ -1,5 +1,4 @@
 const { User } = require('../models')
-const { json } = require('sequelize')
 
 class SessionController {
   async store(req, res) {

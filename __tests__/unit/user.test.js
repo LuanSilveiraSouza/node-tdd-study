@@ -19,4 +19,5 @@ describe('User tests', () => {
 
     expect(compareHash).toBe(true)
   })
+
 })
