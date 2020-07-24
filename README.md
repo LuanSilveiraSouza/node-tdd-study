@@ -3,6 +3,7 @@
 ### Overview
 
 The App in this repository is a REST API for study purposes. It has only basic functionalities with User, like creation and authentication.
+Based on the video [Rocketseat:  Testes no NodeJS aplicando TDD com Jest | Diego Fernandes](https://youtu.be/2G_mWfG0DZE)
 
 ### Technologies 
 
